@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adrian Willis Sasuman — Technical Virtual Assistant & Automation Expert</title>
+<meta name="description" content="Technical Virtual Assistant based in Davao City with 5+ years of experience in CRM automation, WordPress development, and social media management.">
+<meta name="keywords" content="virtual assistant, CRM automation, WordPress developer, Keap, Zapier, Davao Philippines">
+<meta property="og:title" content="Adrian Willis Sasuman — Technical Virtual Assistant">
+<meta property="og:description" content="Helping businesses streamline operations through automation, web development, and intelligent workflow design.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --dark: #060d1a;
+    --dark2: #0e1c30;
+    --dark3: #162338;
+    --mid: #1e3050;
+    --accent: #2563eb;
+    --accent2: #3b82f6;
+    --accent-glow: rgba(37,99,235,0.18);
+    --white: #ffffff;
+    --off: #f7f9fc;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --border-dark: rgba(255,255,255,0.08);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off);
+    color: var(--text);
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--dark);
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    border-bottom: 1px solid var(--border-dark);
+  }
+
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    color: var(--white);
+    font-size: 20px;
+    text-decoration: none;
+  }
+  .logo span { color: var(--accent2); font-style: italic; }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+  .nav-links a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: var(--white) !important;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: #1d4ed8 !important; color: var(--white) !important; }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 22px; height: 2px; background: var(--white); border-radius: 2px; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--dark);
+    padding: 7rem 3rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 350px; height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37,99,235,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(37,99,235,0.12);
+    border: 1px solid rgba(37,99,235,0.3);
+    color: #93c5fd;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    letter-spacing: 0.3px;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #4ade80;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 6vw, 68px);
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent2);
+  }
+
+  .hero-sub {
+    color: rgba(255,255,255,0.55);
+    font-size: 17px;
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 4rem; }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+    padding: 13px 28px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: rgba(255,255,255,0.75);
+    padding: 12px 28px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255,255,255,0.18);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    flex-wrap: wrap;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── SHARED ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+  .section { padding: 5rem 0; }
+
+  .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.3px;
+  }
+  .section-sub {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 500px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  .divider { height: 1px; background: var(--border); }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-avatar {
+    width: 88px; height: 88px;
+    border-radius: 50%;
+    background: var(--dark2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    color: var(--accent2);
+    margin-bottom: 2rem;
+    border: 2px solid rgba(37,99,235,0.4);
+  }
+
+  .about-text {
+    color: #334155;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+  }
+
+  .skills-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 0.75rem; margin-top: 1.5rem; }
+  .skills-wrap { display: flex; flex-wrap: wrap; gap: 7px; }
+  .skill-tag {
+    background: var(--dark);
+    color: #93c5fd;
+    font-size: 12px;
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-weight: 400;
+  }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .card + .card { margin-top: 1rem; }
+  .card h3 { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .edu-item { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+  .edu-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .edu-title { font-size: 13px; font-weight: 500; color: var(--text); }
+  .edu-sub { font-size: 12px; color: var(--muted); margin-top: 3px; }
+
+  /* ── PROJECTS ── */
+  .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .filter-btn {
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--dark);
+    color: var(--white);
+    border-color: var(--dark);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .proj-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .proj-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+  }
+
+  .proj-thumb {
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .t1 { background: linear-gradient(140deg, #060d1a 0%, #1a2d4a 100%); }
+  .t2 { background: linear-gradient(140deg, #0a0f1e 0%, #102040 100%); }
+  .t3 { background: linear-gradient(140deg, #060d1a 0%, #0e1c30 100%); }
+
+  .proj-thumb-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 24px;
+    width: 100%;
+    height: 100%;
+  }
+  .thumb-block {
+    border-radius: 6px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .proj-icon {
+    width: 60px; height: 60px;
+    border-radius: var(--radius-sm);
+    background: rgba(37,99,235,0.15);
+    border: 1px solid rgba(37,99,235,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .proj-icon svg { width: 28px; height: 28px; stroke: #60a5fa; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  .proj-body { padding: 1.4rem; }
+  .proj-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 0.8rem; }
+  .proj-tag {
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  .proj-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 0.5rem; }
+  .proj-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; font-weight: 300; }
+  .proj-metric {
+    font-size: 12px;
+    color: #059669;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .proj-metric::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #059669;
+    flex-shrink: 0;
+  }
+
+  .view-more { text-align: center; margin-top: 3rem; }
+
+  /* ── SERVICES ── */
+  .services-section { background: var(--dark); }
+  .services-section .section-title { color: var(--white); }
+  .services-section .label { color: #60a5fa; }
+  .services-section .section-sub { color: rgba(255,255,255,0.45); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 4rem;
+  }
+
+  .svc-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .svc-card:hover {
+    border-color: rgba(37,99,235,0.4);
+    background: rgba(37,99,235,0.06);
+  }
+  .svc-icon {
+    width: 46px; height: 46px;
+    border-radius: var(--radius-sm);
+    background: rgba(37,99,235,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+  .svc-icon svg { width: 22px; height: 22px; stroke: #60a5fa; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .svc-title { font-size: 15px; font-weight: 500; color: var(--white); margin-bottom: 0.5rem; }
+  .svc-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.65; font-weight: 300; }
+
+  .process-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .step {
+    padding: 1.75rem;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.02);
+    transition: background 0.2s;
+  }
+  .step:last-child { border-right: none; }
+  .step:hover { background: rgba(37,99,235,0.06); }
+  .step-num { font-size: 11px; color: var(--accent2); margin-bottom: 0.75rem; letter-spacing: 1px; font-weight: 500; }
+  .step-title { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 0.4rem; }
+  .step-desc { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.65; font-weight: 300; }
+
+  /* ── CONTACT ── */
+  .contact-section { background: var(--dark); }
+  .contact-inner {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 4rem 3rem;
+    text-align: center;
+    background: rgba(255,255,255,0.02);
+  }
+  .contact-inner h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 4vw, 40px);
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+  .contact-inner p { color: rgba(255,255,255,0.45); font-size: 15px; max-width: 460px; margin: 0 auto 2.5rem; font-weight: 300; }
+
+  .contact-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 2.5rem; }
+
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 2rem;
+  }
+  .contact-info a, .contact-info span {
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-info a:hover { color: rgba(255,255,255,0.7); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer p { font-size: 12px; color: rgba(255,255,255,0.25); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 12px; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(255,255,255,0.55); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 64px; left: 0; right: 0;
+      background: var(--dark);
+      border-top: 1px solid var(--border-dark);
+      padding: 1rem 1.5rem;
+      flex-direction: column;
+      gap: 0;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 15px;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .hero { padding: 4rem 1.5rem 3rem; }
+    .container { padding: 0 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .process-row { grid-template-columns: 1fr 1fr; }
+    .hero-stats { gap: 2rem; }
+    footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+    .contact-inner { padding: 2.5rem 1.5rem; }
+  }
+  @media (max-width: 480px) {
+    .process-row { grid-template-columns: 1fr; }
+    .step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .step:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Adrian<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact" class="nav-cta">Work with me</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#projects" onclick="toggleMenu()">Projects</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#contact" onclick="toggleMenu()">Work with me</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-badge">Available for work</div>
+    <h1>Technical Virtual<br>Assistant &amp; <em>Automation</em><br>Expert</h1>
+    <p class="hero-sub">I help businesses streamline operations through CRM automation, WordPress development, and intelligent workflow design — so you can focus on what matters.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="mailto:Adrianwillis.sasuman@gmail.com?subject=Work%20inquiry%20from%20portfolio">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Work with me
+      </a>
+      <a class="btn-outline" href="mailto:Adrianwillis.sasuman@gmail.com?subject=Resume%20Request">
+        Download resume
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">5+</div><div class="stat-label">Years experience</div></div>
+      <div><div class="stat-num">3</div><div class="stat-label">Long-term clients</div></div>
+      <div><div class="stat-num">15+</div><div class="stat-label">Tools mastered</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">Remote ready</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="fade-up">
+        <div class="about-avatar">AW</div>
+        <div class="label">About me</div>
+        <div class="section-title" style="margin-bottom:1.25rem">Hi, I'm Adrian Willis</div>
+        <p class="about-text">A Technical Virtual Assistant based in Davao City, Philippines with over 5 years of experience supporting remote and in-office teams. I specialize in making complex systems run smoothly — from CRM automation to WordPress course portals to social media production.</p>
+        <p class="about-text">My background in Information Technology, combined with hands-on work across coaching businesses, yoga studios, and financial companies, gives me a well-rounded perspective on what operational efficiency actually looks like in practice.</p>
+        <p class="about-text">I don't just complete tasks — I improve the systems behind them.</p>
+        <div class="skills-title">Tools &amp; technologies</div>
+        <div class="skills-wrap">
+          <span class="skill-tag">WordPress</span>
+          <span class="skill-tag">Keap CRM</span>
+          <span class="skill-tag">Zapier</span>
+          <span class="skill-tag">GoHighLevel</span>
+          <span class="skill-tag">Kajabi</span>
+          <span class="skill-tag">LearnDash</span>
+          <span class="skill-tag">Memberium</span>
+          <span class="skill-tag">Mailchimp</span>
+          <span class="skill-tag">Acuity Scheduling</span>
+          <span class="skill-tag">Google Calendar</span>
+          <span class="skill-tag">Canva</span>
+          <span class="skill-tag">Photoshop</span>
+          <span class="skill-tag">CapCut</span>
+          <span class="skill-tag">Filmora</span>
+          <span class="skill-tag">Asana</span>
+          <span class="skill-tag">Basecamp</span>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay: 0.15s;">
+        <div class="card">
+          <h3>Education &amp; certifications</h3>
+          <div class="edu-item">
+            <div class="edu-title">B.S. Information Technology</div>
+            <div class="edu-sub">St. Peter's College of Toril · 2015–2019</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-title">Introduction to AI Prompting &amp; ChatGPT</div>
+            <div class="edu-sub">DICT Region XI · May 16, 2025</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-title">Digital Marketing Social Media Management</div>
+            <div class="edu-sub">DICT Region XI · April 11, 2025</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Work experience</h3>
+          <div class="edu-item">
+            <div class="edu-title">Virtual Assistant / CRM Expert / Web Designer</div>
+            <div class="edu-sub">Outsourced Doers · Inner Eye Life Coaching · SpiritedGrowth</div>
+            <div class="edu-sub">July 2020 – March 2026</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-title">Freelance Graphic Designer / Technical Support</div>
+            <div class="edu-sub">Love Yoga · July 2024 – January 2026</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-title">Social Media Manager</div>
+            <div class="edu-sub">Credit Card Company (Part-time) · Aug–Nov 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="fade-up">
+      <div class="label">Portfolio</div>
+      <div class="section-title">Featured projects</div>
+      <p class="section-sub">Selected work spanning automation, web development, and content strategy.</p>
+    </div>
+    <div class="filter-bar fade-up">
+      <button class="filter-btn active" onclick="filterProjects('all', this)">All projects</button>
+      <button class="filter-btn" onclick="filterProjects('crm', this)">CRM &amp; Automation</button>
+      <button class="filter-btn" onclick="filterProjects('web', this)">Web development</button>
+      <button class="filter-btn" onclick="filterProjects('social', this)">Social media</button>
+      <button class="filter-btn" onclick="filterProjects('design', this)">Design</button>
+    </div>
+    <div class="projects-grid" id="projectsGrid">
+
+      <div class="proj-card fade-up" data-tags="crm web">
+        <div class="proj-thumb t1">
+          <div class="proj-icon">
+            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="proj-tag">Keap CRM</span><span class="proj-tag">Zapier</span><span class="proj-tag">Automation</span></div>
+          <div class="proj-title">Lead nurturing automation system</div>
+          <div class="proj-desc">Built end-to-end CRM workflows for a life coaching business, eliminating repetitive tasks and accelerating lead response time across the full funnel.</div>
+          <div class="proj-metric">Significantly reduced manual follow-up and data entry</div>
+        </div>
+      </div>
+
+      <div class="proj-card fade-up" data-tags="web" style="transition-delay:0.1s">
+        <div class="proj-thumb t2">
+          <div class="proj-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="proj-tag">WordPress</span><span class="proj-tag">LearnDash</span><span class="proj-tag">Memberium</span></div>
+          <div class="proj-title">Course portal &amp; membership site</div>
+          <div class="proj-desc">Launched a complete WordPress LMS with membership gating for a coaching brand — configured hosting, enrollment, and structured course content for immediate launch.</div>
+          <div class="proj-metric">Shortened client launch timeline considerably</div>
+        </div>
+      </div>
+
+      <div class="proj-card fade-up" data-tags="social design" style="transition-delay:0.2s">
+        <div class="proj-thumb t3">
+          <div class="proj-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="proj-tag">Canva</span><span class="proj-tag">CapCut</span><span class="proj-tag">Brand identity</span></div>
+          <div class="proj-title">Love Yoga brand identity &amp; social</div>
+          <div class="proj-desc">Designed a cohesive brand identity for a yoga studio — logo, color palette, typography — then produced consistent social media and short-form video content.</div>
+          <div class="proj-metric">Improved brand recognition and cross-channel consistency</div>
+        </div>
+      </div>
+
+      <div class="proj-card fade-up" data-tags="crm" style="transition-delay:0.05s">
+        <div class="proj-thumb t1">
+          <div class="proj-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="proj-tag">Acuity Scheduling</span><span class="proj-tag">Google Calendar</span></div>
+          <div class="proj-title">Executive calendar &amp; scheduling system</div>
+          <div class="proj-desc">Centralized multi-timezone scheduling for business leadership — eliminated double-bookings and missed meetings across complex, overlapping calendars.</div>
+          <div class="proj-metric">Lowered booking conflicts and improved daily availability</div>
+        </div>
+      </div>
+
+      <div class="proj-card fade-up" data-tags="social" style="transition-delay:0.15s">
+        <div class="proj-thumb t2">
+          <div class="proj-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="proj-tag">Social Media</span><span class="proj-tag">Moderation</span><span class="proj-tag">Scheduling</span></div>
+          <div class="proj-title">Credit card social media management</div>
+          <div class="proj-desc">Managed brand reputation for a financial company through content moderation guidelines, scheduling, and escalation protocols for sensitive issues.</div>
+          <div class="proj-metric">Sustained steady engagement and reduced manual posting time</div>
+        </div>
+      </div>
+
+      <div class="proj-card fade-up" data-tags="crm web" style="transition-delay:0.25s">
+        <div class="proj-thumb t3">
+          <div class="proj-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="proj-tag">GoHighLevel</span><span class="proj-tag">Mailchimp</span></div>
+          <div class="proj-title">Multi-channel marketing automation</div>
+          <div class="proj-desc">Set up GoHighLevel and Mailchimp campaigns with segmented email sequences and automated follow-up for a spiritual coaching business.</div>
+          <div class="proj-metric">Improved lead response consistency across all channels</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="view-more fade-up">
+      <a class="btn-primary" href="mailto:Adrianwillis.sasuman@gmail.com?subject=Portfolio%20inquiry%20-%20More%20projects">
+        View more projects
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+  <div class="container">
+    <div class="fade-up">
+      <div class="label">What I do</div>
+      <div class="section-title">Services</div>
+      <p class="section-sub">End-to-end support across automation, web, and content — so your business runs without friction.</p>
+    </div>
+    <div class="services-grid fade-up">
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div class="svc-title">CRM automation</div>
+        <div class="svc-desc">Keap, GoHighLevel, and Zapier workflows that eliminate repetitive tasks and keep leads moving through your funnel automatically.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="svc-title">WordPress development</div>
+        <div class="svc-desc">Course portals, membership sites, and business websites built on WordPress with LearnDash, Memberium, and Kajabi integrations.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <div class="svc-title">Calendar &amp; scheduling</div>
+        <div class="svc-desc">Complex multi-calendar management using Acuity Scheduling and Google Calendar to eliminate conflicts and protect executive time.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div>
+        <div class="svc-title">Social media management</div>
+        <div class="svc-desc">Strategy, content scheduling, short-form video, and brand-consistent graphics across platforms — including moderation and reporting.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="svc-title">Brand &amp; graphic design</div>
+        <div class="svc-desc">Logo design, brand identity systems, and print-ready assets using Canva and Photoshop — built for consistency across every channel.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.362a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg></div>
+        <div class="svc-title">Short-form video production</div>
+        <div class="svc-desc">Editing and producing reels, YouTube shorts, and social video content with Filmora and CapCut — on time and on brand.</div>
+      </div>
+    </div>
+
+    <div class="process-row fade-up">
+      <div class="step">
+        <div class="step-num">01 — Discovery</div>
+        <div class="step-title">Understand your goals</div>
+        <div class="step-desc">Scoping session to map workflows, pain points, and what success looks like for your team.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02 — Proposal</div>
+        <div class="step-title">Clear plan, clear scope</div>
+        <div class="step-desc">Detailed project brief with timeline, deliverables, and tool recommendations — no surprises.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03 — Execution</div>
+        <div class="step-title">Build and configure</div>
+        <div class="step-desc">Hands-on setup and development with regular check-ins to keep everything on track.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04 — Handoff</div>
+        <div class="step-title">Launch and support</div>
+        <div class="step-desc">Full documentation and walkthrough so your team can operate independently — or I stay on retainer.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="contact-inner fade-up">
+      <h2>Ready to work together?</h2>
+      <p>Whether you need CRM automation, a new website, or a reliable extra pair of hands — I'd love to hear about your project.</p>
+      <div class="contact-btns">
+        <a class="btn-primary" href="mailto:Adrianwillis.sasuman@gmail.com?subject=Work%20inquiry%20from%20portfolio">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email me directly
+        </a>
+        <a class="btn-outline" href="mailto:Adrianwillis.sasuman@gmail.com?subject=Hire%20Adrian%20Willis%20Sasuman">
+          Hire me
+        </a>
+      </div>
+      <div class="contact-info">
+        <a href="mailto:Adrianwillis.sasuman@gmail.com">Adrianwillis.sasuman@gmail.com</a>
+        <span>+63 908 986 7190</span>
+        <span>Davao City, Philippines</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Adrian Willis Sasuman · Technical Virtual Assistant</p>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#services">Services</a>
+    <a href="mailto:Adrianwillis.sasuman@gmail.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    var m = document.getElementById('mobileMenu');
+    m.classList.toggle('open');
+  }
+
+  function filterProjects(tag, btn) {
+    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelectorAll('.proj-card').forEach(function(card) {
+      var tags = card.dataset.tags || '';
+      card.style.display = (tag === 'all' || tags.includes(tag)) ? '' : 'none';
+    });
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(function(el) {
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
